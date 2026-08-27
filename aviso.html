@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio No Disponible</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Usamos la fuente Inter para un diseño limpio */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1 {
+            color: #3cff00;
+            text-align: left;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Contenedor principal para centrar el mensaje -->
+    <div class="w-full max-w-md">
+
+        <!-- La tarjeta de mensaje de servicio no disponible -->
+        <div id="service-unavailable-message"
+             class="bg-white border-t-8 border-red-600 rounded-xl shadow-2xl p-8 md:p-10 text-center">
+
+            <!-- Icono de advertencia/error (SVG en línea) -->
+            <svg class="w-16 h-16 text-red-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+           
+            <!-- El mensaje requerido -->
+            <div class="text-3xl font-extrabold text-gray-800 mb-2">
+                Es posible que haiga errores en la plataforma
+            </div>
+
+            <!-- Descripción adicional para contexto -->
+            <p class="text-gray-600 text-lg mb-6">
+              de Bit Music. Se nesecita buena conexión
+            </p>
+            <audio id="myAudio" src="tono.mp3"></audio>
+            <!-- Botón de acción sugerido (opcional) -->
+            <a href="presentacion.html" target="_blank" id="toggleButton"
+               class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 transition duration-300 transform hover:scale-[1.02] shadow-lg">
+                Ingresar
+            </a>
+            
+        </div>
+    </div>
+<script>
+     document.getElementById('toggleButton').addEventListener('click', function() {
+  var audio = document.getElementById('myAudio');
+  audio.currentTime = 0// Reinicia el sonido si ya se estaba reproduciendo
+  audio.play();
+  setTimeout(() => {
+     
+      window.location.href = "";
+ }, 2000);
+}); 
+</script>
+</body>
+</html>
